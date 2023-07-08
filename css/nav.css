@@ -43,7 +43,7 @@ body .shell-main-nav .logo span {
 }
 
 body .shell-main-nav ul {
-  width: 600px;
+  width: 720px;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -78,9 +78,10 @@ body .shell-main-nav ul li a {
   text-align: center;
 }
 body .shell-main-nav ul li:nth-child(1):hover~.nav-box {
-  left: 0px;
-  background-color: red;
+  left: 0;
+  background-color: deeppink;
 }
+
 body .shell-main-nav ul li:nth-child(2):hover~.nav-box {
   left: 120px;
   background-color: red;
@@ -99,6 +100,11 @@ body .shell-main-nav ul li:nth-child(4):hover~.nav-box {
 body .shell-main-nav ul li:nth-child(5):hover~.nav-box {
   left: 480px;
   background-color: #7df88e;
+}
+
+body .shell-main-nav ul li:nth-child(6):hover~.nav-box {
+  left: 600px;
+  background-color: purple;
 }
 /* media */
 @media (max-width:768px) {
