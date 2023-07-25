@@ -1546,12 +1546,19 @@
             }
             document.getElementById('alert_connection_way').innerHTML=all_message[i].connect_way
             document.getElementById('alert_right_videos').innerHTML=all_message[i].videos
-            if(all_message[i].magician.length>40){
-                document.getElementById('alert_right_videos').classList.add('small1')
+            if(all_message[i].videos.length>40){
+                if(all_message[i].videos.length>80){
+                    document.getElementById('alert_right_videos').classList.add('small3')
+                }else {
+                    document.getElementById('alert_right_videos').classList.add('small1')
+                }
                 document.getElementById('alert_right_videos').parentElement.classList.add('small2')
             }else{
                 if(document.getElementById('alert_right_videos').classList.contains('small1')){
                     document.getElementById('alert_right_videos').classList.remove('small1')
+                    document.getElementById('alert_right_videos').parentElement.classList.remove('small2')
+                }else if(document.getElementById('alert_right_videos').classList.contains('small3')){
+                    document.getElementById('alert_right_videos').classList.remove('small3')
                     document.getElementById('alert_right_videos').parentElement.classList.remove('small2')
                 }
             }
