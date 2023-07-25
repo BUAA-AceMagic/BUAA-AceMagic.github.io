@@ -1,0 +1,234 @@
+/**{*/
+/*    !* 初始化 *!*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+/*body{*/
+/*    !* 100%窗口高度 *!*/
+/*    height: 100vh;*/
+/*    !* 弹性布局 水平+垂直居中 *!*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    !* 渐变背景 *!*/
+/*    background: linear-gradient(200deg,#517fa4,#243949);*/
+/*}*/
+.card{
+    /* 相对定位 */
+    position: relative;
+    width: 240px;
+    height: 360px;
+    margin: 16px;
+    background-color: #758a99;
+    border-radius: 16px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 弹性布局 */
+    display: flex;
+    /* 元素纵向排列 */
+    flex-direction: column;
+    /* 居中 */
+    align-items: center;
+    color: #fff;
+    /* 阴影 */
+    box-shadow: 0 0 24px rgba(0,0,0,0.5);
+    /* 不让其被挤压 */
+    flex-shrink: 0;
+}
+.card .photo img{
+    width: 100%;
+    height: 100%;
+    /* 保持原有尺寸比例，裁切长边 */
+    object-fit: cover;
+}
+/* 默认大图 */
+.card .photo{
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    overflow: hidden;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+/* 鼠标移入变小图 */
+.card:hover .photo{
+    top: 24px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    box-shadow: 0 0 16px rgba(0,0,0,0.8);
+}
+/* 这里加个黑色到透明的渐变背景，可以更好的看清楚名字 */
+.card .photo::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,transparent 50%,#222);
+}
+.card h1{
+    position: absolute;
+    top: 296px;
+    transition: 0.5s;
+}
+.card:hover h1{
+    top: 136px;
+}
+.card h2{
+    margin-top: 176px;
+    width: 80%;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+.card p{
+    width: 90%;
+    text-indent: 20px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+.card button{
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+}
+.card button:hover{
+    color: #fff;
+    background-color: rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+
+.card-container {
+  /* 100%窗口高度 */
+  height: 100vh;
+  /* 弹性布局 水平+垂直居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 设置弹性容器自动占用剩余空间 */
+  flex: 1;
+  /* 其他样式属性，如居中等，根据需要添加 */
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* 遮罩层 */
+.alert{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.4);
+    position: fixed;
+    top:0;
+    left: 0;
+}
+.alert-body{
+    width: 50%;
+    height: 60%;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    animation: moveFromBottom .3s linear;
+}
+.alert-title{
+    height: 10%;
+    line-height: 40px;
+    border-bottom: 2px solid #eee;
+    font-size: 20px;
+    position: relative;
+    color: black;
+    font-weight: bolder;
+}
+.close{
+    width: 40px;
+    height: 40px;
+    line-height: 0;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+.close:hover{
+    color: red;
+}
+.alert-content{
+    display: flex;
+    height: 90%;
+    color: #999;
+}
+@keyframes moveFromTop{
+    0%{
+        margin-top: -600px;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+@keyframes moveFromBottom{
+    0%{
+        margin-bottom: -600px;
+    }
+    100%{
+        margin-bottom: 0;
+    }
+}
+.alert_left{
+    width: 25%;
+    padding: 5px;
+    margin: 10px;
+    border-right: rgba(153, 153, 153, 0.6) 2px solid;
+}
+.alert_left .photo{
+    margin-top: 12px;
+}
+.alert_left .photo img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,0.8);
+    /* 保持原有尺寸比例，裁切长边 */
+    object-fit: cover;
+}
+.alert_left .texts{
+    font-size: 16px;
+    margin: 18px;
+    letter-spacing: 2px;
+    line-height: 48px;
+    text-align: left;
+}
+.alert_right{
+    width: 75%;
+    padding: 5px;
+    margin: 10px;
+}
+.alert_right .texts{
+    font-size: 16px;
+    margin: 18px;
+    letter-spacing: 2px;
+    line-height: 38px;
+    text-align: left;
+}
+.title1{
+    margin: 20px 20px 10px;
+    font-size: 48px;
+}
+.title2{
+    margin: 40px;
+    font-size: 24px;
+    color: grey;
+}
