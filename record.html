@@ -1767,7 +1767,11 @@
         pic_list[i].src = all_message[i].pic
         text1_list[i].innerHTML = all_message[i].name
         text2_list[i].innerHTML = all_message[i].job
-        text3_list[i].innerHTML = all_message[i].introduce
+        let temp = all_message[i].introduce
+        if (temp.length > 23) {
+            temp = temp.substring(0, 23) + ' . . . '
+        }
+        text3_list[i].innerHTML = temp
         //点击后给弹窗赋值
         btn_list[i].onclick = function () {
             alertEl.style.display='flex'
