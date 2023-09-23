@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="./image/logo.png" type="image/x-icon"/>
   <style>
       body .shell-main-nav ul .nav-box {
-          left: 240px;
+          left: 480px;
       }
 
       body .shell-main {
@@ -116,7 +116,7 @@
   <div class="images">
   </div>
   <div class="shell-main-footer">
-    <span>版权所有-山羊の前端小窝</span>
+    <span>magic-Ace<br>如有侵权，请联系作者删除</span>
   </div>
 
 </div>
@@ -124,9 +124,9 @@
 <script>
     let images = document.querySelector('.images')
     let image = document.querySelector('.image')
-    for (let i = 1; i < 48; i++) {
+    for (let i = 1; i < 24; i++) {
         var lis = document.createElement('div')
-        lis.innerHTML = `<img class="img" src='./image/img/img (` + i + `).png'>`
+	      lis.innerHTML = `<img class="img" src='./image/img/img(` + i + `).jpg'>`
         images.appendChild(lis)
     }
     let img = document.querySelectorAll('.img')
@@ -134,7 +134,7 @@
         img[i].addEventListener("click", () => {
             image.style.display = "flex"
             let index = i + 1
-            image.innerHTML = "<img src='./image/img/img (" + index + ").png'>"
+            image.innerHTML = "<img src='./image/img/img(" + index + ").png'>"
             document.body.style.overflow = 'hidden'; //禁止页面滑动
         })
     }

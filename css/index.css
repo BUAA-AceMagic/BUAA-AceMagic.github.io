@@ -174,11 +174,12 @@ body .shell-main-lbt {
   background-color: #978989;
   margin-bottom: 150px;
   overflow: hidden;
-  background-image: url("../image/index/part1_lbt2.gif");
+  background-image: url("../image/index/part1_lbt3.gif"),
+                    url("../image/index/part1_lbt4.gif");
   background-color: #fff;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 50%;
+  background-position: 20% center , 80% center;
 }
 
 body .shell-main-lbt .images {
