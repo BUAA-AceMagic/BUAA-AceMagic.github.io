@@ -12,7 +12,7 @@
   <title>Ace魔术社</title>
   <style>
     body .shell-main-nav ul .nav-box {
-          left: 240px;
+          left: 300px;
       }
   </style>
 </head>
@@ -33,7 +33,6 @@
           <li><a href="./timeline.html">魔幻之夜</a></li>
           <li><a href="record.html">社员档案</a></li>
           <li><a href="./Template.html">社员风采</a></li>
-          <li>登录</li>
           <div class="nav-box"></div>
         </ul>
       </div>
@@ -130,9 +129,7 @@
         </div>
       </div>
 
-      <div class="shell-main-footer" style="transform: translateY(0)">
-        <span>magic-Ace<br>如有侵权，请联系作者删除</span>
-      </div>
+
     </div>
 
 
@@ -172,7 +169,8 @@
                       var that = $(this);
                       // 如果滚动到最后一个项目，并且超过了当前项目高度的一半，
                       // 则将最后一个项目设置为激活状态，并设置背景图片为最后一个项目的图片
-                      if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
+                      // wsx:一半似乎不太行，1/3正好合适
+                      if (i == itemLength - 2 && pos > min + $(this).height() / 3) {
                           selectors.item.removeClass(selectors.activeClass);
                           selectors.id.css(
                               "background-image",

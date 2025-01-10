@@ -1,4 +1,5 @@
 var audio = document.getElementById('audio');
+audio.volume = 0.5;
 var isAudioPlayed = false; // 记录音频是否已经播放过
 
 // 添加键盘事件监听器

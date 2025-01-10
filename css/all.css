@@ -44,6 +44,7 @@ body .shell-main-footer {
   letter-spacing: 2px;
   align-items: center;
   text-align: center;
-  font: 100 30px 'font';
-  background-color: #a1e6ff;
+  font: 100 40px 'font';
+  color: rgb(255, 255, 255);
+  background-color: #308ddc;
 }
